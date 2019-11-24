@@ -87,14 +87,14 @@ ALTER TABLE tblCompany_HSK DROP COLUMN RETEST
 SP_HELPCONSTRAINT [테이블이름]
 ```
 ```sql
-SP_HELPCONSTRAINT
+SP_HELPCONSTRAINT tblCompany_HSK
 ```
 
 ### Primary Key 추가
 
  > 모든 제약조건은 이름을 가지게 되는데 별도로 지정하지 않으면 임의의 이름이 붙게 됨
 ```sql
-ALTER TABLE [테이블이름] ADD CONSTRAINT [제약조건이름] PRIMARY KEY CLUSTERED
+ALTER TABLE [테이블이름] ADD CONSTRAINT [제약조건이름] PRIMARY KEY CLUSTERED (PK지정할컬럼이름)
 ```
 ```sql
 ALTER TABLE tblCompany_HSK ADD CONSTRAINT PK_tblCompany PRIMARY KEY CLUSTERED (SABUN)
@@ -102,13 +102,13 @@ ALTER TABLE tblCompany_HSK ADD CONSTRAINT PK_tblCompany PRIMARY KEY CLUSTERED (S
 
 ###  Foreign Key 추가
 ```sql
-ALTER TABLE [테이블이름]] ADD 
-	CONSTRAINT [제약조건이름] FOREIGN KEY(외래키지정할컬럼) 
+ALTER TABLE [테이블이름]] 
+	ADD CONSTRAINT [제약조건이름] FOREIGN KEY(외래키지정할컬럼) 
 	REFERENCES [참조할테이블=PK가있는테이블](참조할컬럼) 
 ```
 ```sql
-ALTER TABLE tblProject_HSK ADD 
-	CONSTRAINT FK_tblCompany FOREIGN KEY(SABUN) 
+ALTER TABLE tblProject_HSK 
+	ADD CONSTRAINT FK_tblProject FOREIGN KEY(SABUN) 
 	REFERENCES tblCompany_HSK(SABUN) 
 ```
 
