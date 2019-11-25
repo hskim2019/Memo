@@ -1,6 +1,18 @@
 ### 테이블 조회
 ```sql
 SELECT * FROM INFORMATION_SCHEMA.TABLES
+
+SELECT NAME FROM SYS.TABLES
+```
+
+## 특정 컬럼이 포함 된 테이블 찾기
+```sql
+SELECT
+T.name AS table_name, C.name AS column_name
+FROM sys.tables AS T
+INNER JOIN sys.columns AS C
+ON T.object_id = C.object_id
+WHERE C.name = '[컬럼명]'
 ```
 
 ### 테이블 속성 확인

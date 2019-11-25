@@ -76,6 +76,18 @@ SELECT NAME, COUNT(PROJECTNAME) AS ProjectCTN
         GROUP BY NAME
 ```
 
+## HAVING
+- Group By 를 통해 묶인 레코드 그룹에 대해 조건을 거는 것
+- WHERE 절과 동일하지만 집계함수를 조건절에 사용할 수 있음
+```sql
+SELECT 
+A.NAME, COUNT(PROJECTNAME) AS CTN
+FROM tblCompany_HSK AS A
+LEFT JOIN tblProject_HSK AS B ON A.SABUN = B.SABUN
+GROUP BY NAME 
+HAVING COUNT(PROJECTNAME) > 2
+```
+
 ## SELECT TOP
 - 상위값 출력
 ```sql
