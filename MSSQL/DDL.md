@@ -1,3 +1,14 @@
+### 데이터베이스 생성
+```sql
+IF DB_ID (N'BoardAppDb') IS NOT NULL  
+DROP DATABASE BoardAppDb;  
+GO  
+CREATE DATABASE BoardAppDb  
+COLLATE Korean_Wansung_CI_AS ;  
+GO
+```
+
+
 ### 테이블 조회
 ```sql
 SELECT * FROM INFORMATION_SCHEMA.TABLES
