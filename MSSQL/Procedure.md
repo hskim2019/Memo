@@ -54,7 +54,12 @@ GO
         >  &nbsp; 오류에 대해서만 발생하고 경고에 대해서는 발생하지 않음
 
 
-
+## Procedure 삭제
+```sql
 DROP PROCEDURE dbo.USP_SelectCompanyList
+```
 
+## Procedure 호출
+```sql
 EXEC dbo.USP_SelectCompanyList '99', '세글', '테스트팀', '외부'
+```
