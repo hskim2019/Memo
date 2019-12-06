@@ -88,9 +88,15 @@ SELECT CONVERT (char(10), PROJECTDATE, 23) AS 날짜
 FROM tblProject_HSK
 ```
 
-TRY_CONVERT
+### TRY_CONVERT
 
-# 프로시저
+
+## RowNo
+- key(id) 대신 RowNo 사용하기
+```sql
+SELECT BoardNo, BoardTitle, ROW_NUMBER() OVER(ORDER BY BoardNo) AS ROWNUM From Boards
+```
+
 # 인덱스
 # 커서
 # 트리거
