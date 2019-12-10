@@ -145,4 +145,11 @@ ALTER TABLE tblCompany_HSK DROP CONSTRAINT PK_tblCompany
 ```
 
 
+### Default 값 추가
+```sql
+ALTER TABLE [테이블이름] ADD CONSTRAINT [제약조건이름] DEFAULT [값] FOR [제약조건넣을컬럼이름]
+```
+```sql
+ALTER TABLE Comments_TB ADD CONSTRAINT DF_CommentOrder DEFAULT 0 FOR OriginCommentNo
+```
 
