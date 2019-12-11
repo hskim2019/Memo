@@ -100,3 +100,10 @@ SELECT BoardNo, BoardTitle, ROW_NUMBER() OVER(ORDER BY BoardNo) AS ROWNUM From B
 # 인덱스
 # 커서
 # 트리거
+
+## 암호화 PWDENCRYPT / PWDCOMPARE
+```sql
+INSERT INTO Boards(password) VALUES(PWDENCRYPT('1234'));
+
+SELECT PWDCOMPARE('1234', password) FROM Boards WHERE boardNo = 1;
+```
