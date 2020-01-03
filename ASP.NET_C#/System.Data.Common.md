@@ -60,4 +60,7 @@ reader.Close();
 ```
 
 ### DataAdapter.Fill method
-- 
+- SQL Data source와 DataSet 연결에 사용
+- Fill method를 통해 Data source를 얻어오고, DataSet을 채움
+- 연결 된 SelectCommand 속성으로 지정 된 Select문을 사용하여 데이터 원본에서 행을 검색
+
