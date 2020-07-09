@@ -32,5 +32,11 @@ Microsoft Graph가 사용하고 있는 서비스 URL은 https://graph.microsoft.
 다른 사용자 정보에 접근할 때는 https://graph.microsoft.com/v1.0/users/{Email Address}/ 가 사용된다.
 
 
+Graph API 사용을 위해서는
+1. Azure 포털에 앱 등록
+2. 등록된 앱의 Client ID, Client Secret 알고 있어야 함
+3. 앱의 최대 사용기간 내에서만 사용 가능
+4. 권한 지정
+5. 관리자 접속 계정 정보 필요
 
 출처: https://thermidor.tistory.com/1402 [떼르미의 『IT, 그리고 세상』]

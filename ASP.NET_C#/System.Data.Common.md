@@ -1,7 +1,7 @@
 
 ## 메서드
-- ExcuteNonQuery : 명령어 실행, 해당 쿼리문 적용 된 레코드 수 반환
-- ExecuteReader : 명렁어를 Connection을 통해 보내고 SqlDataReader 바인딩 (?)
+- ExcuteNonQuery : 명령어 실행, 해당 쿼리문 적용 된(영향받은 행 수) 레코드 수 반환 
+- ExecuteReader : 명렁어를 Connection을 통해 보내고 SqlDataReader 바인딩 (?), 한 번에 하나의 레코드만 메모리에 유지하면서 전체 겨로가 집합을 반복할 수 있는 개체를 반환
 - ExecuteScalar : 명령어 실행, Sum(), Avg()와 같이 값이 하나만 반환 될 경우 사용
 
 ---
