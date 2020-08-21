@@ -21,5 +21,18 @@ jQuery('input[type="checkbox"]', jQuery("#dataList").DataTable().rows({'search':
 ```
 
 
+### model 구조
+```javascript
+var AprItemValue = {
 
+	 "item" : {
+	 	"ID": "",
+		"AprLine": { "Line": [] } 
+  	} 
+}
+
+var aprLine = {"UserID": ""}
+
+AprItemValue.item.AprLine.Line.push(aprLine)
+```
 
