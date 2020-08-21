@@ -7,3 +7,19 @@
 - Array.prototype의 slice method를 빌려오기
 - 일반 literal 객체와arguments에는 배열 method가 없고, 호출 할 수가 없기 때문에
 - 여기서의 arguements 는 배열이 아닌 배열처럼 생긴 객체
+
+## 화면에 보이는 테이블만
+jQuery("input[name=gvcheck]").trigger("click");
+
+## 테이블 전체 체크박스
+```javascript
+jQuery('input[type="checkbox"]', jQuery("#dataList").DataTable().rows({'search': 'applied'}).nodes()).prop('checked', false);
+
+  window.AccountingCustom.CheckedRows = window.AccountingCustom.CheckedRows.filter(function (item, idx, array) {
+            return array.indexOf(item) === idx;
+        });
+```
+
+
+
+
