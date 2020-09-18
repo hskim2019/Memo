@@ -153,3 +153,19 @@ ALTER TABLE [테이블이름] ADD CONSTRAINT [제약조건이름] DEFAULT [값] 
 ALTER TABLE Comments_TB ADD CONSTRAINT DF_CommentOrder DEFAULT 0 FOR OriginCommentNo
 ```
 
+## Index
+
+### 인덱스 조회
+```sql
+SP_Helpindex [테이블이름]
+```
+
+### 인덱스 생성
+```sql
+CREATE INDEX [인덱스이름] ON [테이블이름]([컬럼이름])
+```
+
+### 인덱스 삭제
+```sql
+DROP INDEX [테이블이름].[인덱스이름]
+```
