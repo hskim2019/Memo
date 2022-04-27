@@ -12,3 +12,4 @@
 http://gnujava.com/board/article_view.jsp?article_no=3410&board_no=35&table_cd=EPAR01&table_no=01
 
 WebContent > WEB-INF > web.xml
+<img src="https://github.com/hskim2019/Memo/blob/master/images/struts.jpg"/>
