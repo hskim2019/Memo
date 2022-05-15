@@ -65,10 +65,6 @@ SP_RENAME 'tblCompany_HSK', 'tblCompany'
 ```sql
 DROP TABLE [테이블 이름]
 ```
-```sql
-DROP TABLE TESTTABLE
-```
-
 
 ### 컬럼 수정
 

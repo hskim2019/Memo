@@ -88,6 +88,14 @@ GROUP BY NAME
 HAVING COUNT(PROJECTNAME) > 2
 ```
 
+```
+SELECT - 5순위 (필수)
+FROM - 1순위 (필수)
+WHERE - 2순위
+GROUP BY - 3순위
+HAVING - 4순위
+ORDER BY - 6순위
+```
 ## SELECT TOP
 - 상위값 출력
 ```sql

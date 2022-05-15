@@ -52,3 +52,13 @@ CONVERT(NVARCHAR(500), DecryptByKey(ConnectionString, 1 , HashBytes('SHA1', CONV
 FROM  GWT_Customer
 EXEC SymmetricKey_Close
 ```
+
+
+### SET QUOTED_IDENTIFIER ON/OFF
+* 따옴표 처리를 표준에 따를 것인지 여부
+    - SELECT "1" 은 비표준 (OFF)
+    - SELECT '1'은 표준
+### SET ANSI_NULLS ON/OFF
+* NULL 값에 대한 비교 처리를 표준에 따를 것인지 여부
+    - 컬럼 = NULL 은 비표준 
+    - 컬럼 IS NULL 표준

@@ -33,7 +33,7 @@ http://gnujava.com/board/article_view.jsp?article_no=3410&board_no=35&table_cd=E
 
 <servlet-mapping> <!--url패턴 설정-->
 	<servlet-name>StrutsAction</servlet-name> <!-- *.adics 로 들어오면 servlet-name이 action 실행 -->
-	<url-pattern>*.do</url-pattern>
+	<url-pattern>*.do</url-pattern> <!-- param-value 에 작성한 xml 중 해당하는 것을 어떻게 찾아서 action을 실행하는지는 모르겠다. -->
 </servlet-mapping>
 
 <welcome-file-list>
@@ -75,6 +75,102 @@ https://wiper2019.tistory.com/103
      type : 작업 처리할 Action class 지정
      forward : action 의 return message 가 main이면 path 로 forward >
 ```
+
+
+### Example2
+(관리자) 전자결재 
+http://localhost:8080/admin/appr/MasterCodeAction.adics?cmd=main 
+
+#### 1) web.xml 
+*.adics 로 들어왔으므로 web.xml 에서 servlet-name으로 action 실행
+param-value에 작성된 여러 xml 중에서 해당하는 것을 어떻게 찾는지는 모르겠다. path로 찾는 것으로 추측
+```xml
+	<servlet>
+		<servlet-name>StrutsAction</servlet-name>
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+			/WEB-INF/configs/struts/admin/struts_config_admin_appr.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>3</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StrutsAction</servlet-name>
+		<url-pattern>*.adics</url-pattern>
+	</servlet-mapping>
+```
+#### 2) WEB-INF/configs/struts/admin/struts_config_admin_appr.xml
+http://localhost:8080/admin/appr/MasterCodeAction.adics?cmd=main 
+path - /admin/appr/MasterCodeAction 인 것으로 찾는 듯
+name - 지정 된 MasterCodeForm 객체를 생성하여(model)
+type - /com/hanil/admin/appr/mastercode/MasterCodeAction 호출하어 처리
+forward - cmd 값이 main 이므로 path에 지정 된 appr.mastercode.main 에 mapping  
+```xml
+<struts-config>
+	<form-beans>
+		<form-bean type="com.hanil.admin.common.mastercode.MasterCodeForm" name="MasterCodeForm"/>
+	</form-beams>
+
+	<action-mappings>        
+	<action path="/admin/appr/MasterCode*Action"
+				name="MasterCode{1}Form"
+				type="com.hanil.admin.appr.mastercode.MasterCodeAction"
+	    		scope="request"
+	    		parameter="cmd">
+	    		
+	    	<forward name="main" path="appr.mastercode.main"/>
+            <forward name="delete" path="/jsp/framework/ajax/AjaxXML.jsp"/>
+            <forward name="insert" path="/jsp/framework/ajax/AjaxXML.jsp"/>
+            <forward name="update" path="/jsp/framework/ajax/AjaxXML.jsp"/>
+        </action>
+	</action-mappings>
+	<controller processorClass="com.hanil.framework.servlet.RequestProcessor"/>
+</struts-config>
+```
+
+#### 3) WEB-INF/configs/tiles/admin/tiles_admin_appr_layout.xml
+name = appr.mastercode.main 과 mapping 되는 듯
+extends = tiles.xml에 지정 된 admin_layout 을 over write 하는 것 처럼 채우는 것 같음, tiles.xml 이 mater layout인 셈
+```xml
+<tiles-definitions>
+	<definition name="appr.mastercode.main" extends="admin_layout">
+		<put name="title" value="Groupware Mail Administrator" />
+		<put name="topMenu" value="/jsp/admin/include/topMenu.jsp?menuID=002"/>
+		<put name="left_menu" value="/jsp/admin/menu/appr/admin_appr_menu.xml"/>
+		<put name="menu" value="appr" />
+		<put name="leftHeaderImage" value="/admin/common/admin-title_ea.png"/>
+		<put name="body" value="/admin/appr/MasterCodeList.adics?cmd=listView" />
+	</definition>
+</tiles-definitions>
+```
+
+#### 4) WEB-INF/configs/tiles/tiles_layout.xml
+admin_common_layout.jsp 에 html 있음
+```xml
+<tiles-definitions>
+	<definition name="admin_layout" path="/layouts/admin/admin_common_layout.jsp">
+	  	<put name="title" value=""/>
+	  	<put name="topMenu" value=""/>
+	  	<put name="leftHeaderImage" value=""/>
+		<put name="body" value="" />
+	</definition>
+</tiles-definitions>	
+```
+
+#### 5) WebContents/layouts/admin/admin_common.layout.jsp
+name value 로 값이 채워짐
+```jsp
+	<iframe width="100%" height="100%" id="main" name="main" 
+	frameborder="0" src="<tiles:getAsString name="body"/>"  
+	scrolling="no" marginwidth="0" marginheight="0" frameborder="0">
+	</iframe> 
+```
+
 
 ## 업무지원 공지사항/일반게시판
 * ex) board_list.jsp 
