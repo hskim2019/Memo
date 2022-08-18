@@ -45,7 +45,7 @@ using System;
 
 class Program {
     static void Main(string[] args) {
-        using(ImpersonationExample impersonation = new ImpersonationExaple("Administrator@vplext.net", "networkip", "password")) {
+        using(ImpersonationExample impersonation = new ImpersonationExample("Administrator@vplext.net", "networkip", "password")) {
             // ...
             // using 문 사용으로 계정 Impersonation 후 인스턴스 소멸 시 사용자 undo 복귀 됨
         }
@@ -216,3 +216,6 @@ namespace ImpersonationExample
 * [외부 라이브러리 사용] ("https://irontooth.tistory.com/172")
 * [Windows Impersonation] ("http://m.csharpstudy.com/Practical/View?aspx=Prac-Impersonation.aspx&title=C%23%20Impersonation")
 * [msdn] (https://docs.microsoft.com/en-us/previous-versions/windows/desktop/legacy/ee391633(v=vs.85))
+
+* [GetUserPrincipal()] ("https://referencesource.microsoft.com/#system.web/Hosting/IIS7WorkerRequest.cs")
+* [IIS Security] ("http://www.simpleisbest.net/articles/200.aspx")
