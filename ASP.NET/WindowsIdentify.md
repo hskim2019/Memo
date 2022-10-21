@@ -219,3 +219,21 @@ namespace ImpersonationExample
 
 * [GetUserPrincipal()] ("https://referencesource.microsoft.com/#system.web/Hosting/IIS7WorkerRequest.cs")
 * [IIS Security] ("http://www.simpleisbest.net/articles/200.aspx")
+
+
+## IIS Security
+
+### AccessToken
+* Access Token : 현재 프로세스가 어떤 계정하에서 수행 되는지
+* SID : Access Token 에 대한 SID, SID 로부터 계정 이름을 알 수 있음
+### Impersonation
+* 클라이언트로부터 서버 자원에 대한 액세스 서비스 요청을 받았을 때, 서버는 파일의 ACL(Access Control List) 를 읽어 클라이언트의 액세스 토큰과 ACL 을 비교 검사하여 권한이 있고 없음을 결정<br>
+  이 때 서버 프로그램이 클라이언트 계정인 것 처럼 impersonate 하여 파일에 액세스<br>
+  Windows impersonate 방법은 여러가지가 있고, 그 중 하나가 LogonUser API 를 호출하는 것<br>
+  API 를 호출 한 Thread 는  primary token 과 별개로 impersonation token 을 받게 되고 호출 한 thread 만 이 때 발급 받은 impersonation token 의 영향을 받음<br>
+  이 Thread 는 RevertToSelf 함수를 호출하여 가장 중지 할 수 있다
+### IIS 인증
+* 인증 : IIS 에 의해 관리
+ + IIS manager 에서 인증설정
+ + IIS 는 보안 수준이 낮을 쪽을 먼저 적용
+* 권한 설정 : Windows 파일 보안에 따름. 인증을 먼저 수행 후 권한 설정
