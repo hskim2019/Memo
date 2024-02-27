@@ -62,4 +62,4 @@
 * This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved.  
 In contrast, a stable sort preserves the order of elements that are equal.  
 * This method is an O(n log n) operation, where n is length.
-* Quick sort(퀵 정렬) + Heap Sort(힙 정렬) + Insert sort(삽입 정렬)
+* Quick sort(퀵 정렬) + Heap Sort(힙 정렬) + Insert sort(삽입 정렬) 
