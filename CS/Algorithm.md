@@ -62,4 +62,19 @@
 * This implementation performs an unstable sort; that is, if two elements are equal, their order might not be preserved.  
 In contrast, a stable sort preserves the order of elements that are equal.  
 * This method is an O(n log n) operation, where n is length.
-* Quick sort(퀵 정렬) + Heap Sort(힙 정렬) + Insert sort(삽입 정렬) 
+* Quick sort(퀵 정렬) + Heap Sort(힙 정렬) + Insert sort(삽입 정렬)
+
+#### Big O
+##### 참고 링크
+* [시간복잡도 표와 영문표기](https://dingrr.com/blog/post/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84-big-o)
+
+```
+시간복잡도 단계 (빠른순으로)
+[fast] O(1) < O( log n ) < O(n) < O(n log n) < O(n^2) 
+
+O(1) – 상수 시간 : 문제를 해결하는데 오직 한 단계만 처리함.
+O(log n) – 로그 시간 : 문제를 해결하는데 필요한 단계들이 연산마다 특정 요인에 의해 줄어듬.
+O(n) – 직선적 시간 : 문제를 해결하기 위한 단계의 수와 입력값 n이 1:1 관계를 가짐.
+O(n log n) - 선형로그형:  문제를 해결하기 위한 단계의 수가 N*(log2N) 번만큼의 수행시간을 가진다.
+O(n^2) – 2차 시간 : 문제를 해결하기 위한 단계의 수는 입력값 n의 제곱.
+```
