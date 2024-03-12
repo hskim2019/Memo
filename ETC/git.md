@@ -23,3 +23,19 @@
  - git stash clear (모든 stash 삭제)
 
  - [참고링크](https://doing-programming.tistory.com/entry/Git-%EC%9E%91%EC%97%85%ED%95%98%EB%8D%98-%EB%82%B4%EC%9A%A9-%EB%B8%8C%EB%A0%8C%EC%B9%98-%EC%98%AE%EA%B8%B0%EA%B8%B0-Git-Stash)
+
+ # branch 목록 확인
+ ## git branch
+
+ # branch 삭제
+ ## git branch -d {branch이름}
+
+ # git merge 
+ 1. B 를 A 에 병합하려면 A 에서 
+ - git merge B 실행
+ 2. Please enter a commit message to explain why this merge is necessary,...
+ - i 입력
+ - merge message 입력
+ - [esc]
+ - :wq 입력
+ - [enter]
