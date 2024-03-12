@@ -38,4 +38,4 @@
  - merge message 입력
  - [esc]
  - :wq 입력
- - [enter]
+ - [enter] 
