@@ -14,3 +14,12 @@
 5. branch 를 master 에 merge
 -- git merge branch1
 -- git push
+
+-- merge 되돌리기
+ - git reset --hard HEAD^
+
+-- git stash 삭제
+ - git stash drop stash@{1}
+ - git stash clear (모든 stash 삭제)
+
+ - [참고링크](https://doing-programming.tistory.com/entry/Git-%EC%9E%91%EC%97%85%ED%95%98%EB%8D%98-%EB%82%B4%EC%9A%A9-%EB%B8%8C%EB%A0%8C%EC%B9%98-%EC%98%AE%EA%B8%B0%EA%B8%B0-Git-Stash)
