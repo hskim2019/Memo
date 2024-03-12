@@ -28,5 +28,7 @@ class Program {
       Console.WriteLine("다르다!");
     else
       Console.WriteLine("같다!");
+
+      // 출력결과 같다
   }
 }
