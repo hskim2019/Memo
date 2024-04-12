@@ -30,6 +30,12 @@
 
 #### Not In Place Sorting
 
+- In-place하지 않은 알고리즘은 n 길이의 리스트를 정렬할 때 n 만큼의 메모리보다 더 많은 메모리 공간을 할당한다. 즉, 이런 알고리즘들은 space complexity가 높다.
+- Merge Sort
+- Counting Sort
+- Radix Sort
+- Bucket Sort
+
 #### 정렬 알고리즘 종류
 
 **Slection Sort**

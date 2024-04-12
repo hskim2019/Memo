@@ -7,6 +7,15 @@
   - 데이터 접근이 주 목적이면 Array
   - 데이터의 수정이 주 목적이면 LinkedList가 유리
 
+| **Array**                                   | **LinkedList**                                                                                                                                     |
+| :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Arrays are stored in contiguous location    | Linked lists are not stored in contiguous location                                                                                                 |
+| Fixed in size                               | Dynamic in size                                                                                                                                    |
+| Memory is allocated at compile time         | Memory is allocated at run time                                                                                                                    |
+| Use less memory than linked lists           | Uese more memory because it sotred both data and the address of next node                                                                          |
+| Elements can be accessed easily             | Element accessing requires the traversal of whole linked list                                                                                      |
+| Insertion and deletion operation takes time | Insertion and deletion operation is faster<br>(no elements need to be shifted after insertion and deletion, Just the address needed to be updated) |
+
 ## Stack vs Queue
 
 - Stack : Last in First out (LIFO)
@@ -54,3 +63,17 @@
 - 내부적으로 배열을 사용하여 데이터를 저장하기 때문에 빠른 검색 속도를 갖는다.
 - 특별한 알고리즘을 이용하여 저장할 데이터와 연관된 고유한 숫자를 만들어낸 뒤 이를 인덱스로 사용
 - 적은 자원으로 많은 데이터를 효율적으로 관리하기 위해 임의의 길이 데이터를 고정된 길이의 데이터로 맵핑
+
+### HashTable
+
+- Key 와 Value 를 사용하여 자료를 저장
+- 중복 Key 를 허용하지 않는다
+- Key 와 Value 둘 다 Object 형식을 사용한다. (박싱 언박싱 발생)
+- Value 가 Object 형식이기 때문에 타입에 상관없이 여러 형태 저장
+
+```c#
+  var hash = new HashTable();
+  hash.Add("A", 1);
+  hash.Remove("A");
+  int myNum = (int)hash["A"];
+```
