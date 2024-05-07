@@ -7,14 +7,14 @@
   - 데이터 접근이 주 목적이면 Array
   - 데이터의 수정이 주 목적이면 LinkedList가 유리
 
-| **Array**                                   | **LinkedList**                                                                                                                                     |
-| :------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Arrays are stored in contiguous location    | Linked lists are not stored in contiguous location                                                                                                 |
-| Fixed in size                               | Dynamic in size                                                                                                                                    |
-| Memory is allocated at compile time         | Memory is allocated at run time                                                                                                                    |
-| Use less memory than linked lists           | Uese more memory because it sotred both data and the address of next node                                                                          |
-| Elements can be accessed easily             | Element accessing requires the traversal of whole linked list                                                                                      |
-| Insertion and deletion operation takes time | Insertion and deletion operation is faster<br>(no elements need to be shifted after insertion and deletion, Just the address needed to be updated) |
+|/| **Array** | **LinkedList** | 
+| :---: | :--- | :---- |
+| **Data Structure**| Contiguous (연속 메모리 할당)</br>Arrays are stored in contiguous location  | Non-contiguous(비연속 메모리 할당)</br>Linked lists are not stored in contiguous location</br> 메모리 공간을 자유롭게 사용할 수 있어서 메모리 낭비를 줄이는데 도움이 된다. |
+| **Memory Allocation** | Fixed in size | Dynamic in size |
+|                       | Memory is allocated at compile time | Memory is allocated at run time |
+|                       | Use less memory than linked lists | Uese more memory because it sotred both data and the address of next node |
+| **Access** | Random</br>Elements can be accessed easily | Sequential</br>Element accessing requires the traversal of whole linked list |
+| **Insertion/Deletion**| Inefficient</br>Insertion and deletion operation takes time | Efficient</br>Insertion and deletion operation is faster<br>(no elements need to be shifted after insertion and deletion, Just the address needed to be updated) |
 
 ## Stack vs Queue
 
