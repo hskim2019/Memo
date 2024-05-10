@@ -39,3 +39,28 @@
  - [esc]
  - :wq 입력
  - [enter] 
+
+ # git init commit
+ - 프로젝트 생성 후 처음 git 에 commit 할 때
+
+ 1. github 에 repository 생성
+ 2. git bash - 프로젝트 디렉토리로 이동하여
+    - git 초기화 (이미 git 프로젝트라면 그동안 쌓인 git 기록이 초기화 될 수 있으므로 주의)
+    - .git 폴더가 생성된다
+ ```cmd
+ > git init
+ ```
+ 3. 원격 저장소 이름 지정
+```cmd
+> git remote add [이름] [HTTPS 또는 SSH 주소]
+> git remote add origin https://github.com/hskim2019/CSPROJ_TEST.git
+```
+
+4. commit
+```cmd
+> git add .
+> git commit -m "init commit"
+
+> git push [저장소이름] [branch이름]
+> git push origin master
+```
