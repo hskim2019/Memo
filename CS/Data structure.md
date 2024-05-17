@@ -18,8 +18,28 @@
 
 ## Stack vs Queue
 
-- Stack : Last in First out (LIFO)
+- Stack : Last in First out (LIFO) / First in Last Out (FILO)
 - Queue : First in First out (FIFO)
+
+### Operation on Stack
+- Push : Adds an element to the top of the stack
+- Pop : Removes and returns the element at the top of the stack
+- Peek : Returns the element at the top of the stack without removing it
+- Size : Returns the number of elements in the stack
+- IsEmpty : Checks if the stack is empty
+- IsFull : Checks if the stack is full (in case of fixed-size arrays)
+
+### Application of Stack Data Structures
+
+### Complexity Analysis of Stack Operations
+- Time Complexity & Space Complexity of push(), pop()...etc : O(1)
+
+### Operation on Queue
+- Enqueue : Adds and element to the rear of the queue
+- Dequeue : Removes and element from the front of the queue
+- Peek : Retrives the front element without removing it
+- IsEmpty : Checks if the queue is empty
+- IsFull : Checks if the queue is full
 
 ## Tree
 
