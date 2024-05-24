@@ -34,6 +34,17 @@
 ### Complexity Analysis of Stack Operations
 - Time Complexity & Space Complexity of push(), pop()...etc : O(1)
 
+### C# Stack with Examples
+- A Stack accepts null as a valid value for reference types
+- Clear : This method is used to remove all the objects from the stack
+- Pop : This method removes the beginning element of the stack
+- Peek : This method returns the object at the beginning of the stack without removing it
+- Contains : This method returns true if the element present in the stack
+
+
+
+
+
 ### Operation on Queue
 - Enqueue : Adds and element to the rear of the queue
 - Dequeue : Removes and element from the front of the queue
