@@ -33,7 +33,7 @@
         + IIS 6.0 에서 작업자 프로세스는 w3wp.exe
 
     * IIS 가 .aspx 파일에 대한 요청을 받으면 응용 프로그램의 스크립트 맵은 해당 .aspx 파일을 적절한 버전의 ASP.NET ISAP 확장에 전달하도록 IIS에 지시한다
-    
+
     * 클라이언트의 모든 HTTP 요청은 IIS 의 실행 프로세스인 inetinfo.exe 가 받아 들인다. inetinfo 는 요청 리소스의 형식을 확인하여 확장자와 매핑 되어있는 ISPI Extension 모듈로 요청을 전달한다
     * aspnet_isapi.dll 은 닷넷 웹 리소스를 직접 처리하지 않고 ASP.NET Worker Process 인 aspnet_wp.exe 로 요청을 전달하는 dispatcher 로서 역할을 수행한다
     * aspnet_isapi.dll과 aspnet_wp.exe 사이의 연결은 Win32 메커니즘인 명명 파이프를 통해 이루어진다.
@@ -54,9 +54,9 @@
 [Reference: https://moonan90.tistory.com/42](https://moonan90.tistory.com/42)
 
 [그림1] </br>
-<img src="https://github.com/hskim2019/Memo/blob/master/images/aspnet_isapi_dll_location.jpg" style="width:870px;"/>
+<img src="../images/aspnet_isapi_dll_location.jpg" style="width:870px;"/>
 
 [그림2] </br>
-[Reference](https://korsa.tistory.com/17)
-<img src="https://github.com/hskim2019/Memo/blob/master/images/appdomain_cil.PNG" style="width:870px;"/>
+[Reference](https://korsa.tistory.com/17)</br>
+<img src="../images/appdomain_cil.PNG" style="width:870px;"/>
 
