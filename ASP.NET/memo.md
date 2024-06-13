@@ -54,9 +54,9 @@
 [Reference: https://moonan90.tistory.com/42](https://moonan90.tistory.com/42)
 
 [그림1] </br>
-<img src="../images/aspnet_isapi_dll_location.jpg" style="width:870px;"/>
+<img src="../images/aspnet_isapi_dll_location.jpg" style="width:520px;"/>
 
 [그림2] </br>
 [Reference](https://korsa.tistory.com/17)</br>
-<img src="../images/appdomain_cil.PNG" style="width:870px;"/>
+<img src="../images/appdomain_cil.PNG" style="width:520px;"/>
 
