@@ -62,3 +62,26 @@ EXEC SymmetricKey_Close
 * NULL 값에 대한 비교 처리를 표준에 따를 것인지 여부
     - 컬럼 = NULL 은 비표준 
     - 컬럼 IS NULL 표준
+
+
+### 데이터베이스 호환성 수준
+* [참조_link](https://blog.outsider.ne.kr/1160)
+```sql
+  -- 데이터베이스 호환성 수준(compatibility_level)이 100인 DB 에서 실행 시 
+  -- "개체 이름 'string_split'이(가) 잘못되었습니다." 오류
+  SELECT  DisplayName
+         ,VALUE
+    FROM  USER
+   CROSS APPLY STRING_SPLIT(DisplayName, '/')
+
+ -- 데이터베이스 호환성 수준(compatibility_level)이 130인 DB 에서 실행 시 오류 없음
+  SELECT  DisplayName
+         ,VALUE
+    FROM  User.dbo.USER
+   CROSS APPLY STRING_SPLIT(DisplayName, '/')
+
+ -- 호환성 수준 확인
+   SELECT name, compatibility_level, * FROM sys.databases WHERE NAME = 'DB명'
+   
+ -- STRING_SPLIT 에서는 호환성 수준이 130 이상이어야 한다. 수준이 130보다 작으면 데이터베이스 엔진 함수를 찾을 수 없다
+```
