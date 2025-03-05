@@ -19,6 +19,14 @@
     - 메서드 내에 선언 되어서 메서드 내에서만 사용
     - 메서드가 실행 될 떼 메모리에 할당 됨, 메서드 끝나면 소멸
 
+## class 와 struct 차이
+[Reference](https://velog.io/@livelyjuseok/C-Struct%EC%99%80-Class%EC%9D%98-%EC%B0%A8%EC%9D%B4.-%EA%B7%B8%EB%A6%AC%EA%B3%A0-%EC%99%9C-%EC%82%AC%EC%9A%A9%ED%95%A0%EA%B9%8C)
+* 상속 여부
+    - Class 는 상속이 가능하지만, 구조체는 상속이 불가능하다.
+* 형식의 차이
+    - Struct는 값 타입(Value Type)이지만 Class는 참조(Reference Type)이다.
+    - 값 타입은 스택 메모리 영역에 할당, 참조 타입은 힙 영역에 할당되며 가비지 컬렉터가 힙에 할당된 메모리를 정리, 스택은 사용 후 종료된다.
+
 ## Static이란?
 - 어떠한 값이 메모리에 한 번 할당되면 프로그램이 끝날 때 까지 그 값이 유지 됨
 - 특정한 값을 공유해야 하는 경우 static 사용

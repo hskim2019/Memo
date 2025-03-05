@@ -47,6 +47,7 @@
               DotNet 의 논리적인 프로세스인 App Domain 을 OS 가 인식할 수 있는 물리적인 프로세스 - 실제 바이너리 파일(.exe) 로 변환시켜준다.
               App Domain 들은 CLR 이 관리하기 때문에 OS 는 이들을 직접 보지 못하고 CLR 이 보여주는대로만 볼 수 있다.
               (그림2 참고)
+              [Reference](https://lineho.tistory.com/34)
             
     * 모든 활성 웹 응용프로그램들은 하나의 Worker Process 에서 호스트한다.
       (그림1 참고)
@@ -59,4 +60,17 @@
 [그림2] </br>
 [Reference](https://korsa.tistory.com/17)</br>
 <img src="../images/appdomain_cil.PNG" style="width:520px;"/>
+
+### 상속 Inheritance
+[Reference: 상속 https://www.geeksforgeeks.org/c-sharp-inheritance/](https://www.geeksforgeeks.org/c-sharp-inheritance/)</br>
+[Reference: 인터페이스 Interface](https://daekyoulibrary.tistory.com/entry/C-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98-%EA%BD%83-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4Interface-1%ED%8E%B8)</br>
+[Reference : C# 다중상속](https://velog.io/@livelyjuseok/C-C%EC%9D%80-%EC%99%9C-%EB%8B%A4%EC%A4%91%EC%83%81%EC%86%8D%EC%9D%B4-%EC%95%88%EB%90%A0%EA%B9%8C)</br>
+
+    * C# 에서는 다중 상속 Multiple Inheritance 를 지원하지 않는다. 인터페이스를 통해서만 다중 상속 구현이 가능하다.
+    * 다중 상속 했을 때 같은 함수를 두 개씩 가지게 된다면 어떤 함수를 실행하고자 하는지 알 수 없는 모호성 문제가 발생한다
+    * 인터페이스는 메소드, 이벤트, 인덱서, 프로퍼티만 가질 수 있고 구현부가 없다.
+    * 모든 것이 public 으로 선언되어야 하며
+    * 인터페이스를 상속 받은 클래스에서 오버라이딩 해야 한다
+
+
 
