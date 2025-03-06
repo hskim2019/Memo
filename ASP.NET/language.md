@@ -65,6 +65,13 @@ namespace ConsoleApp
 }
 ```
 
+## ref out 키워드 차이
+[Reference](https://www.geeksforgeeks.org/difference-between-ref-and-out-keywords-in-c-sharp/)
+[Reference](https://jettstream.tistory.com/57)
+    * ref
+        - 변수를 참조 형태로 전달하는데 사용되며 변수가 메서드 안에서 변경될 수 있다
+    * out
+        - 변수를 참조 형태로 전달하는데 사용되며 변수를 전달하기 전에 변수를 초기화 하지 않아도 된다. 하지만 메서드 안에서 반드시 할당되어야 한다.
 
 
 ## async - await
