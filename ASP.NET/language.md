@@ -66,13 +66,23 @@ namespace ConsoleApp
 ```
 
 ## ref out 키워드 차이
-[Reference](https://www.geeksforgeeks.org/difference-between-ref-and-out-keywords-in-c-sharp/)
-[Reference](https://jettstream.tistory.com/57)
+[Reference](https://www.geeksforgeeks.org/difference-between-ref-and-out-keywords-in-c-sharp/)</br>
+[Reference](https://jettstream.tistory.com/57)</br>
     * ref
-        - 변수를 참조 형태로 전달하는데 사용되며 변수가 메서드 안에서 변경될 수 있다
-    * out
-        - 변수를 참조 형태로 전달하는데 사용되며 변수를 전달하기 전에 변수를 초기화 하지 않아도 된다. 하지만 메서드 안에서 반드시 할당되어야 한다.
+        - 변수를 참조로 전달하는데 사용되며 변수가 메서드 안에서 변경될 수 있다
+        - 매서드 내에서 전달하는 변수 변경해야 할 때 사용하면 좋다.
+        - 변수 초기화 필수
 
+    * out
+        - 변수를 참조 타입으로 전달하는데 사용되며 변수를 전달하기 전에 변수를 초기화 하지 않아도 된다. 하지만 메서드 안에서 반드시 할당되어야 한다.
+        - 보통 여러 변수를 리턴해야 할 때 사용한다
+        - 코드의 가독성을 높여준다
+
+## Encalsulation
+[Reference](https://www.geeksforgeeks.org/c-sharp-encapsulation/)</br>
+[Reference](https://developer-talk.tistory.com/478)</br>
+    * 필드를 private로 선언하여 클래스 외부에서 접근할 수 없도록 하고
+    * public 으로 선언된 메서드(getter 및 setter) 를 사용하여 클래스 내부의 필드를 접근하는 것
 
 ## async - await
     * async 키워드는 매서드 내에 await 키워드를 사용할 수 있게 만들어주고, async method 는 void, Task, Task<T> 를 반환
