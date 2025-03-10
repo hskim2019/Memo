@@ -64,6 +64,16 @@ namespace ConsoleApp
    }
 }
 ```
+## 상속 Inheritance
+[Reference: 상속 https://www.geeksforgeeks.org/c-sharp-inheritance/](https://www.geeksforgeeks.org/c-sharp-inheritance/)</br>
+[Reference: 인터페이스 Interface](https://daekyoulibrary.tistory.com/entry/C-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98-%EA%BD%83-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4Interface-1%ED%8E%B8)</br>
+[Reference : C# 다중상속](https://velog.io/@livelyjuseok/C-C%EC%9D%80-%EC%99%9C-%EB%8B%A4%EC%A4%91%EC%83%81%EC%86%8D%EC%9D%B4-%EC%95%88%EB%90%A0%EA%B9%8C)</br>
+
+    * C# 에서는 다중 상속 Multiple Inheritance 를 지원하지 않는다. 인터페이스를 통해서만 다중 상속 구현이 가능하다.
+    * 다중 상속 했을 때 같은 함수를 두 개씩 가지게 된다면 어떤 함수를 실행하고자 하는지 알 수 없는 모호성 문제가 발생한다
+    * 인터페이스는 메소드, 이벤트, 인덱서, 프로퍼티만 가질 수 있고 구현부가 없다.
+    * 모든 것이 public 으로 선언되어야 하며
+    * 인터페이스를 상속 받은 클래스에서 오버라이딩 해야 한다
 
 ## ref out 키워드 차이
 [Reference](https://www.geeksforgeeks.org/difference-between-ref-and-out-keywords-in-c-sharp/)</br>
@@ -104,7 +114,7 @@ namespace ConsoleApp
 <https://afsdzvcx123.tistory.com/entry/C-%EB%AC%B8%EB%B2%95-%EB%B0%95%EC%8B%B1%EA%B3%BC-%EC%96%B8%EB%B0%95%EC%8B%B1%EC%9D%B4%EB%9E%80>
 * Value Type 
     * int, char, double...
-    * 스택 영역에 저장 됨 [메모리구조 참조](/Memo/ETC/CS.md#메모리-구조)
+    * 스택 영역에 저장 됨 [메모리구조 참조](/Memo/CS/OS.md#메모리-구조)
     * Object 를 상속 받은 System.ValueType을 상속받은 구조체
 * Reference Type
     * System.Object 를 상속 받으며
