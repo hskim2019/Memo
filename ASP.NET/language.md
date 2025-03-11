@@ -88,6 +88,13 @@ namespace ConsoleApp
         - 보통 여러 변수를 리턴해야 할 때 사용한다
         - 코드의 가독성을 높여준다
 
+## Property
+[Reference](https://constructionsite.tistory.com/38)
+    * 프로퍼티는 선언한 변수의 값을 외부에서 접근할 수 있도록 하면서 동시에 캡슐화를 지원한다.
+    * 정보은닉을 위해 private 변수를 선언하고, 이 변수를 읽고 쓰는 get, set 메서드를 만들기도 하는데
+    * c# 에서는 자동 구현 프로퍼티를 사용해 get set 접근자에 return 을 굳이 쓰지 않아도 된다.
+    * 예를 들어 외부에서 변경하면 안되는 값이라면 set 을 없애고 get 속성만 부여 가능
+
 ## Encalsulation
 [Reference](https://www.geeksforgeeks.org/c-sharp-encapsulation/)</br>
 [Reference](https://developer-talk.tistory.com/478)</br>
