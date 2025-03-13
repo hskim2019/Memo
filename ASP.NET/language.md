@@ -93,13 +93,41 @@ namespace ConsoleApp
     * 프로퍼티는 선언한 변수의 값을 외부에서 접근할 수 있도록 하면서 동시에 캡슐화를 지원한다.
     * 정보은닉을 위해 private 변수를 선언하고, 이 변수를 읽고 쓰는 get, set 메서드를 만들기도 하는데
     * c# 에서는 자동 구현 프로퍼티를 사용해 get set 접근자에 return 을 굳이 쓰지 않아도 된다.
+    * Read and Write Properties, Read-Only / Write-Only Properties 로 구현 가능
     * 예를 들어 외부에서 변경하면 안되는 값이라면 set 을 없애고 get 속성만 부여 가능
+    * 접근자를 통해 다른 class 에서 private 변수에 접근
+    * 다른 class 에서 오용하지 않고 class member 를 보호
+``` C#
+public class TestModel {
+    // private string r;
+    // public string RollNo {
+    //     get { return r; }
+    //     set { r = value; }
+    // }
+    // public TestModel(string rollNo) {
+    //     this.RollNo = rollNo;
+    // }
+
+    // Auto-Implemented Properties 자동 구현 프로퍼티로 한 줄로 구현 가능
+    public string RollNo { get; set; } = "T";
+}
+
+public class Test {
+    TestModel m = new TestModel();
+    var ex = m.RollNo; // get 메서드가 있어야 접근 가능
+    m.RollNo = "sth"; // set 메서드가 있어야 값 할당 가능
+}
+```
 
 ## Encalsulation
 [Reference](https://www.geeksforgeeks.org/c-sharp-encapsulation/)</br>
 [Reference](https://developer-talk.tistory.com/478)</br>
     * 필드를 private로 선언하여 클래스 외부에서 접근할 수 없도록 하고
     * public 으로 선언된 메서드(getter 및 setter) 를 사용하여 클래스 내부의 필드를 접근하는 것
+    * 장점
+        - data hiding 데이터 은닉
+        - Flexibility 유연성 증가 : 필요에 따라 읽기 전용 또는 쓰기 전용으로 만들 수 있다
+        - Reusability 재사용성
 
 ## async - await
     * async 키워드는 매서드 내에 await 키워드를 사용할 수 있게 만들어주고, async method 는 void, Task, Task<T> 를 반환
@@ -188,6 +216,7 @@ class TestGenericList
 ### IActionResult - status code results
 <https://exceptionnotfound.net/asp-net-core-demystified-action-results/>
 
+
 ### abstract virtual interface
 #### virtual
 - 파생 클래스에서 필요에 따라서 재정의(override) 할 수 있지만 필수로 재정의 할 필요 없음
@@ -196,6 +225,8 @@ class TestGenericList
 - 추상 클래스와 비슷하지만 멤버변수를 사용할 수 없고 프로퍼티는 사용 가능
 - 다른 클래스 작성 시 도움을 주는 목적으로 사용 (표준화)
 - 접근 제한자 사용 불가하고 모든 것이 public으로 선언
+- 인터페이스를 통해서 다중 상속 구현 가능 [상속 참조](/Memo/ASP.NET/language.md#상속-inheritance)
+
 ```C#
 namespace ConsoleApp
 {
@@ -229,7 +260,7 @@ namespace ConsoleApp
 ```
 #### abstract
 - 추상클래스의 목적은 파생 클래스에서 공유해야 하는 공통 정의를 제공하는 것이기 때문에
-- 파생 클래스에서 abstract 한정자가 달린 것을 반드시 재정의 구현 해야 함
+- 파생 클래스에서 abstract 한정자가 달린 것을 <u>반드시</u> 재정의 구현 해야 함
 ```C#
 // 추상 클래스 : 객체를 만들 수 없고 접근하려면 다른 클래스에서 상속 되어야 함
 abstract class Store { 
@@ -261,6 +292,15 @@ namespace ConsoleApp
    }
 }
 ```
+||**추상 클래스**|**인터페이스**|
+|:---:|:---|:---|
+|접근 지정자|반드시 public이어야 하는 추상 메서드를 제외한 모든 멤버는 private으로도 선언될 수 있다.|명시하지 않아도 모든 메서드는 public으로 고정이다.<br>재정의도 반드시 public이어야 한다.|
+|구현|추상 메서드를 제외한 모든 메서드는 구현을 포함할 수 있다.|구현을 포함할 수 없다.|
+|속도|비교적 빠르다.|비교적 느리다. 하지만 무시할 수 있는 수준이다.|
+|인스턴스화|할 수 없다.|할 수 없다.|
+|필드|가질 수 없다.|가질 수 있다.|
+|메서드|모든 형태의 메서드를 가질 수 있다.|추상 메서드만 가질 수 있다. abstract 키워드를 포함하진 않는다.|
+
 # 예외처리
 - try : 예외 검사 할 블록
 - catch: 예외 핸들러를 사용하여 예외를 catch
