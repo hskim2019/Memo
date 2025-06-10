@@ -64,3 +64,11 @@
 > git push [저장소이름] [branch이름]
 > git push origin master
 ```
+
+# 이미 프로젝트에 올라간 ignore 되어야 할 파일 정리
+```cmd
+> git rm -r --cached .
+> git add .
+> git commit -m "적용할 커밋 메시지"
+> git push
+```
