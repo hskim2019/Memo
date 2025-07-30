@@ -61,8 +61,8 @@
 > git add .
 > git commit -m "init commit"
 
-> git push [저장소이름] [branch이름]
-> git push origin master
+> git push -u [저장소이름] [branch이름]
+> git push -u origin master
 ```
 
 # 이미 프로젝트에 올라간 ignore 되어야 할 파일 정리
