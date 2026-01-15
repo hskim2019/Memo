@@ -72,3 +72,15 @@
 > git commit -m "적용할 커밋 메시지"
 > git push
 ```
+
+# azure devops 에서 github 로 백업
+1. azure devops 에서 로컬 pc로 백업
+2. github push
+```git bash
+> cd 프로젝트
+> git remote -v -- 현재 원격 저장소 확인
+> git remote set-url origin github원격저장소
+> git branch -- 브랜치 확인
+> git branch -M master -- 필요하다면 마스터로 브랜치 전환
+> git push -u origin github원격저장소
+```
