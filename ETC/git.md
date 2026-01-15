@@ -82,5 +82,5 @@
 > git remote set-url origin github원격저장소
 > git branch -- 브랜치 확인
 > git branch -M master -- 필요하다면 마스터로 브랜치 전환
-> git push -u origin github원격저장소
+> git push -u origin master
 ```
