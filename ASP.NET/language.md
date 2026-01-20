@@ -31,6 +31,58 @@
   - Struct는 값 타입(Value Type)이지만 Class는 참조(Reference Type)이다.
   - 값 타입은 스택 메모리 영역에 할당, 참조 타입은 힙 영역에 할당되며 가비지 컬렉터가 힙에 할당된 메모리를 정리, 스택은 사용 후 종료된다.
 
+# 값형(Value Type) vs 참조형(Reference Type)
+
+## 📌 값형 (Value Type)
+- 데이터를 직접 저장
+- 주로 **스택(Stack)**에 저장
+- 다른 변수에 대입 시 값 자체가 복사됨
+- `null` 불가능 (단, `Nullable<T>` 사용 가능)
+- 대표 타입: `int`, `double`, `bool`, `char`, `struct`, `enum`
+
+---
+
+## 📌 참조형 (Reference Type)
+- 데이터가 저장된 메모리 위치(참조)를 저장
+- 주로 **힙(Heap)**에 저장
+- 다른 변수에 대입 시 참조가 복사되어 같은 객체를 가리킴
+- `null` 가능
+- 대표 타입: `class`, `array`, `string`, `interface`, `delegate`
+
+---
+
+## 📌 SequenceEqual 비교 시 차이
+- **값형**: 값 자체를 비교 → 동일 값이면 `True`
+- **참조형**: 참조(주소)를 비교 → 다른 객체면 `False`
+- 참조형을 값 비교하려면 `Equals`/`GetHashCode` 오버라이드 또는 `IEqualityComparer<T>` 구현 필요
+
+```c#
+struct Point
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+var list1 = new List<Point> { new Point { X = 1, Y = 2 } };
+var list2 = new List<Point> { new Point { X = 1, Y = 2 } };
+
+bool areEqual = list1.SequenceEqual(list2);
+Console.WriteLine(areEqual); // True (값 자체 비교)
+```
+```c#
+class PointClass
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+var list3 = new List<PointClass> { new PointClass { X = 1, Y = 2 } };
+var list4 = new List<PointClass> { new PointClass { X = 1, Y = 2 } };
+
+bool areEqualClass = list3.SequenceEqual(list4);
+Console.WriteLine(areEqualClass); // False (참조 비교)
+```
+
 ## Static이란?
 
 - 어떠한 값이 메모리에 한 번 할당되면 프로그램이 끝날 때 까지 그 값이 유지 됨
@@ -172,6 +224,7 @@ https://u-rae-rae.tistory.com/25
   - 참조타입 값을 값 타입으로 변환
   - 힙에 있던 데이터를 다시 스택으로 복사
 
+- 값형을 힙에 저장하려면 박싱이 발생 → 성능 비용 있음.
 ```c#
 int i = 123 // a value type
 Object o = i // boxing
