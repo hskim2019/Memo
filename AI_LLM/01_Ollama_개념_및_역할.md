@@ -200,3 +200,12 @@ pip install ollama
 이 명령어는:
 - LLM 모델을 설치하는 것이 아니다
 - Python에서 Ollama와 통신하기 위한 라이브러리를 설치한다
+
+# LCEL
+LangChain 은 실행 가능한 무언가들의 조합이라고 할 수 있다.
+모든 LLM - ChatOpenAI, Chat Azure OpenAI, Chat Anthropic 등 - 이 BaseChatModel을 상속받아 사용하며
+BaseChatModel 은 Runnable을 상속받음
+Runnable 에 invoke 메서드가 있고 runnable 의 output 을 리턴함
+따라서 Lanchain 은 모든 것이 Runable 이며 LCEL 없이는 계속 invoke 해야 함
+LCEL 문법을 사용하면 invoke 를 사용하지 않아도 됨
+
